@@ -18,4 +18,8 @@
 // Created by kk on 2018/3/28.
 //
 
-console.log('hello')
+import * as http from 'http'
+
+export default async function (req: http.IncomingMessage, res: http.ServerResponse) {
+  res.end('Hello')
+}

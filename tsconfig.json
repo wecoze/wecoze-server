@@ -12,8 +12,6 @@
         "node_modules/*"
       ]
     },
-    "types": [
-    ],
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
