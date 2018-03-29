@@ -15,11 +15,18 @@
 //    [bug] .*' /  .*' ; .*`- +'  `*' 
 //          `*-*   `*-*  `*-*'  
 // 
-// Created by kk on 2018/3/28.
+// Created by kk on 2018/3/29.
 //
 
-import { IncomingMessage, ServerResponse } from 'http'
+import micro, { RequestHandler } from 'micro'
+import { Server } from 'http'
 
-export default async function (req: IncomingMessage, res: ServerResponse) {
-  return {res: {message: 'Bonjour'}}
+export const run_server = (fn: RequestHandler) => {
+  let server: Server
+  before(async () => {
+    server = micro(fn).listen(3000)
+  })
+  after(async () => {
+    server.close()
+  })
 }

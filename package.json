@@ -4,21 +4,31 @@
   "description": "wecoze server",
   "author": "wecoze",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wecoze/wecoze-server.git"
+  },
   "scripts": {
-    "api": "DEBUG=* micro dist/api.js",
+    "api": "DEBUG=* micro dist/src/api.js",
     "build": "./node_modules/.bin/tsc",
     "clean": "rm -frv dist",
-    "rebuild": "npm run clean && npm run build"
+    "rebuild": "npm run clean && npm run build",
+    "test": "./node_modules/.bin/mocha /Users/kk/dev/wecoze-server/dist/test/"
   },
   "devDependencies": {
     "@types/chai": "^4.1.2",
+    "@types/micro": "^7.3.1",
     "@types/mocha": "^2.2.48",
     "@types/node": "^8.10.0",
+    "@types/request-promise-native": "^1.0.14",
     "chai": "^4.1.2",
     "mocha": "^4.1.0",
     "typescript": "^2.7.2"
   },
   "dependencies": {
-    "micro": "^9.1.4"
+    "@types/debug": "0.0.30",
+    "micro": "^9.1.4",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5"
   }
 }
